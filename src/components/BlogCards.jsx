@@ -3,8 +3,14 @@ import { FaUser } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 function BlogCards({blogsData, currentPage, selectedCategory,blogShowPerPage}) {
+  console.log(blogsData);
+  console.log(currentPage);
+  console.log(selectedCategory);
+  console.log(blogShowPerPage);
     const filteredBlogs = blogsData.filter((value) => !selectedCategory || value.category === selectedCategory)
     .slice((currentPage-1)*blogShowPerPage, currentPage*blogShowPerPage)
+    console.log(filteredBlogs);console.log(selectedCategory);
+
   return (
     <div className=' grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4'>
         {filteredBlogs.map((value,index)=> <Link key={index} className=' p-5 shadow-lg rounded-lg cursor-pointer'>

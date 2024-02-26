@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import ApiData from "../services/GlobalApi";
 import BlogCards from "./BlogCards";
 import Pagination from "./Pagination";
+import CategorySelection from "./CategorySelection";
+import Sidebar from "./Sidebar";
 
 function BlogPage() {
   const [blogsData, setBlogsData] = useState([]);
@@ -31,6 +33,7 @@ function BlogPage() {
 
   useEffect(() => {
     getBlogsData();
+    console.log(selectedCategory);
   }, [currentPage, blogShowPerPage, selectedCategory]);
 
   const handlePageChange = (pageNumber) => {
@@ -43,19 +46,24 @@ function BlogPage() {
     setActiveCategory(category);
   };
 
+  // console.log(blogsData);
+
   return (
     <div>
       {/* category section */}
-      <div>page category</div>
+      <div><CategorySelection onSelectCategory = {handleCategoryChange} selectedCategory={selectedCategory} activeCategory={activeCategory}/></div>
 
-      {/* blog card section */}
-      <div>
+      
+      <div className=" flex flex-col lg:flex-row gap-8">
+        {/* blog card component */}
         <BlogCards
           blogsData={blogsData}
           currentPage={currentPage}
           selectedCategory={selectedCategory}
           blogShowPerPage={blogShowPerPage}
         />
+{/* sidebar  component */}
+        <Sidebar/>
       </div>
 
       {/* pagination section */}

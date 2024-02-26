@@ -55,9 +55,9 @@ function Navbar() {
             <FaTwitter />
           </a>
 
-          <buton className=" bg-orange-500 px-6 py-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in-out cursor-pointer">
+          <button className=" bg-orange-500 px-6 py-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in-out cursor-pointer">
             Log in
-          </buton>
+          </button>
         </div>
 
           {/* mobile menu btn for mobile device */}

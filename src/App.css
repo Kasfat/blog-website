@@ -4,3 +4,8 @@
 .active{
     @apply text-orange-500 underline underline-offset-4;
 }
+.activePagination{
+background-color: rgb(255, 106, 0);
+color: #fff;
+border-radius: 4px;
+}
